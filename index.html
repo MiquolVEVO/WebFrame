@@ -18,7 +18,7 @@
 </header>
 <body>
     <div class="title">
-        <h1><span class="grey">Web</span><span class="orange">Frame</span></h1>
+        <h1 class="sticky"><span class="grey">Web</span><span class="orange">Frame</span></h1>
     </div>
     <div id="pricing" style="width: 400px; height: 400px; background-color: aqua;">
 
@@ -42,5 +42,14 @@
                 behavior: 'smooth'
             });
         });
+    });
+    window.addEventListener('scroll', function() {
+        // Get the header element
+        var title = document.getElementsByClassName('title');
+        
+        // Change the font size based on scroll position
+        var scrollPos = window.scrollY;
+        var fontSize = Math.max(36 - scrollPos/100, 12); // adjust this formula as needed
+        title.style.fontSize = fontSize + 'pt';
     });
 </script>
